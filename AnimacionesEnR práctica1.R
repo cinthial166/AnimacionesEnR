@@ -7,10 +7,10 @@ library (gapminder) #cargar librería para datos de pib y esperanza de vida
 datos <- gapminder
 
 #crear gráfico ggplot(datos, variables a usar para el gráfico; los títulos de los ejes aparecen por defecto), el geom_ es para indicar si es de barras, líneas, puntos, etc.
-grafico <- ggplot(datos, aes(x=gdpPercap, y=lifeExp, colour=continent)) 
-                  + geom_point(aes(size=pop),alpha=0.8) +  #de acuerdo a los datos de la columna population es el tamaño de los puntos; alpha es para que los puntos sean un poco transparentes
-                    theme_minimal() + theme(legend.position="bottom") #theme_minimal para quitar el fondo color amarillo y quede blanco ("minimalista")
-                  + guides(size="none") + labs(x="PIB per cápita", y="Esperanza de vida",col="")
+grafico <- ggplot(datos, aes(x=gdpPercap, y=lifeExp, colour=continent)) +
+                  geom_point(aes(size=pop),alpha=0.8) +  #de acuerdo a los datos de la columna population es el tamaño de los puntos; alpha es para que los puntos sean un poco transparentes
+                  theme_minimal() + theme(legend.position="bottom") + #theme_minimal para quitar el fondo color amarillo y quede blanco ("minimalista")
+                  guides(size="none") + labs(x="PIB per cápita", y="Esperanza de vida",col="")
 
 #mostrar gráfico
 grafico
@@ -23,5 +23,5 @@ grafico <- grafico +
           transition_time(year) + # gganimate me permite usar esta herramienta
           labs(title="Año:{frame_time}")
 
-grafico
-
+#para guardar solo el gif en la carpeta
+animate(grafico,renderer = gifski_renderer("animacion.gif"))
