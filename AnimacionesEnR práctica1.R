@@ -1,9 +1,7 @@
-#borrar todas las variables existentes (en el cuadro superior derecho)
-rm(list=ls())
-#cargar librería para graficar
-library (ggplot2)
-#cargar librería para datos de pib y esperanza de vida
-library (gapminder)
+
+rm(list=ls()) #borrar todas las variables existentes (en el cuadro superior derecho)
+library (ggplot2)#cargar librería para graficar
+library (gapminder) #cargar librería para datos de pib y esperanza de vida
 
 #asignar a la variable datos la tabla de gapminder
 datos <- gapminder
