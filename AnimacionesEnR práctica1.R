@@ -25,3 +25,4 @@ grafico <- grafico +
 
 #para guardar solo el gif en la carpeta
 animate(grafico,renderer = gifski_renderer("animacion.gif"))
+setwd("C:/Users/cinth/Documents/Bloque. Ciencia de datos para toma de decisiones\AnimacionesEnR)
